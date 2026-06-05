@@ -1,44 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Social Network</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Facebook Clone</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>My Social Network</h1>
+<div class="container">
 
-    <div id="auth">
+  <div class="left">
+    <h1>facebook</h1>
+    <p>Connect with friends and the world around you.</p>
+  </div>
 
-        <input type="email" id="email" placeholder="Email">
+  <div class="right">
 
-        <br><br>
+    <div class="login-box">
 
-        <input type="password" id="password" placeholder="Password">
+      <input type="text" id="username" placeholder="Username">
 
-        <br><br>
+      <input type="email" id="email" placeholder="Email">
 
-        <button onclick="signUp()">Sign Up</button>
+      <input type="password" id="password" placeholder="Password">
 
-        <button onclick="login()">Login</button>
+      <button onclick="signup()">Sign Up</button>
 
-        <button onclick="logout()">Logout</button>
+      <button onclick="login()">Log In</button>
 
     </div>
 
-    <hr>
+  </div>
 
-    <textarea id="postContent" placeholder="What's on your mind?"></textarea>
+</div>
 
-    <br><br>
-
-    <button onclick="createPost()">Post</button>
-
-    <h2>Posts</h2>
-
-    <div id="posts"></div>
-
-    <script type="module" src="app.js"></script>
+<script type="module" src="app.js"></script>
 
 </body>
 </html>

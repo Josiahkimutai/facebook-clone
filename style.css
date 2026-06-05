@@ -1,26 +1,57 @@
-body {
-    font-family: Arial, sans-serif;
-    max-width: 700px;
-    margin: auto;
-    padding: 20px;
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f0f2f5;
 }
 
-textarea {
-    width: 100%;
-    height: 100px;
-    padding: 10px;
+.container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    gap:100px;
 }
 
-button {
-    padding: 10px 20px;
-    cursor: pointer;
-    background: blue;
-    color: white;
-    border: none;
+.left h1{
+    color:#1877f2;
+    font-size:70px;
+    margin:0;
 }
 
-.post {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-top: 10px;
+.left p{
+    font-size:28px;
+    width:400px;
+}
+
+.login-box{
+    background:white;
+    padding:30px;
+    width:350px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+.login-box input{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:6px;
+    font-size:16px;
+}
+
+.login-box button{
+    width:100%;
+    padding:15px;
+    border:none;
+    background:#1877f2;
+    color:white;
+    font-size:18px;
+    border-radius:6px;
+    cursor:pointer;
+    margin-bottom:10px;
+}
+
+.login-box button:hover{
+    background:#166fe5;
 }
