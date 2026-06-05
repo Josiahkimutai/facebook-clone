@@ -1,51 +1,41 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js'
 
 const supabaseUrl = 'https://cpmzvqcoiknotpcutljh.supabase.co'
-
 const supabaseKey = 'sb_publishable_iWUiLtL50Ptcm5sYVBUSvA_U7WyfV-f'
 
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 window.signup = async function () {
 
-    const email = document.getElementById('email').value
-
+    const emailOrPhone = document.getElementById('emailOrPhone').value
     const password = document.getElementById('password').value
 
     const { error } = await supabase.auth.signUp({
-        email,
-        password
+        email: emailOrPhone,
+        password: password
     })
 
-    if(error){
-
+    if (error) {
         alert(error.message)
-
-    }else{
-
-        alert("Account created successfully")
+    } else {
+        alert("Account created ✔")
     }
 }
 
 window.login = async function () {
 
-    const email = document.getElementById('email').value
-
+    const emailOrPhone = document.getElementById('emailOrPhone').value
     const password = document.getElementById('password').value
 
     const { error } = await supabase.auth.signInWithPassword({
-        email,
-        password
+        email: emailOrPhone,
+        password: password
     })
 
-    if(error){
-
+    if (error) {
         alert(error.message)
-
-    }else{
-
-        alert("Login successful")
-
+    } else {
+        alert("Login successful ✔")
         window.location.href = "home.html"
     }
 }
