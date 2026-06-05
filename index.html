@@ -3,35 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Facebook Clone</title>
+  <title>Facebook</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
+<div class="main">
 
-  <div class="left">
-    <h1>facebook</h1>
-    <p>Connect with friends and the world around you.</p>
-  </div>
+    <div class="left">
 
-  <div class="right">
+        <h1>facebook</h1>
 
-    <div class="login-box">
-
-      <input type="text" id="username" placeholder="Username">
-
-      <input type="email" id="email" placeholder="Email">
-
-      <input type="password" id="password" placeholder="Password">
-
-      <button onclick="signup()">Sign Up</button>
-
-      <button onclick="login()">Log In</button>
+        <p>
+            Facebook helps you connect and share with the people in your life.
+        </p>
 
     </div>
 
-  </div>
+    <div class="right">
+
+        <div class="login-box">
+
+            <input type="email" id="email" placeholder="Email address or phone number">
+
+            <input type="password" id="password" placeholder="Password">
+
+            <button class="login-btn" onclick="login()">Log in</button>
+
+            <a href="#">Forgotten password?</a>
+
+            <hr>
+
+            <button class="create-btn" onclick="signup()">
+                Create new account
+            </button>
+
+        </div>
+
+    </div>
 
 </div>
 

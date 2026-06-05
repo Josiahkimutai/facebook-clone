@@ -4,46 +4,33 @@ const supabaseUrl = 'https://cpmzvqcoiknotpcutljh.supabase.co'
 
 const supabaseKey = 'sb_publishable_iWUiLtL50Ptcm5sYVBUSvA_U7WyfV-f'
 
-
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 window.signup = async function () {
 
-    const username = document.getElementById('username').value
     const email = document.getElementById('email').value
+
     const password = document.getElementById('password').value
 
-    const { data, error } = await supabase.auth.signUp({
+    const { error } = await supabase.auth.signUp({
         email,
         password
     })
 
-    if (error) {
+    if(error){
+
         alert(error.message)
-        return
-    }
 
-    const user = data.user
+    }else{
 
-    const { error: profileError } = await supabase
-        .from('profiles')
-        .insert([
-            {
-                id: user.id,
-                username: username
-            }
-        ])
-
-    if(profileError){
-        alert(profileError.message)
-    } else {
-        alert("Signup successful")
+        alert("Account created successfully")
     }
 }
 
 window.login = async function () {
 
     const email = document.getElementById('email').value
+
     const password = document.getElementById('password').value
 
     const { error } = await supabase.auth.signInWithPassword({
@@ -52,8 +39,10 @@ window.login = async function () {
     })
 
     if(error){
+
         alert(error.message)
-    } else {
+
+    }else{
 
         alert("Login successful")
 
