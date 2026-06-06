@@ -1,42 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Facebook - login</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
 
-    <!-- LEFT TEXT -->
+    <!-- LEFT SIDE -->
     <div class="left">
+
         <h1>facebook</h1>
-        <p>Facebook helps you connect and share with the people in your life.</p>
+
+        <p>
+            Facebook helps you connect and share with the people in your life.
+        </p>
+
     </div>
 
-    <!-- LOGIN BOX -->
+    <!-- RIGHT SIDE -->
     <div class="right">
 
         <div class="login-box">
 
-            <input type="text" id="emailOrPhone" placeholder="Email or phone number">
-            <input type="password" id="password" placeholder="Password">
+            <input type="text"
+                   id="username"
+                   placeholder="Email address or phone number">
 
-            <button class="login-btn" onclick="login()">Log In</button>
+            <input type="password"
+                   id="password"
+                   placeholder="Password">
+
+            <button class="login-btn"
+                    onclick="login()">
+                Log in
+            </button>
 
             <a href="#">Forgotten password?</a>
 
             <hr>
 
-            <button class="create-btn" onclick="signup()">
+            <button class="create-btn"
+                    onclick="signup()">
                 Create new account
             </button>
 
         </div>
 
-        <p class="create-page">
+        <p class="bottom-text">
             <b>Create a Page</b> for a celebrity, brand or business.
         </p>
 
@@ -45,5 +59,6 @@
 </div>
 
 <script type="module" src="app.js"></script>
+
 </body>
 </html>

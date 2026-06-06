@@ -1,13 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Facebook Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facebook Feed</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f0f2f5;
+}
+
+/* TOP BAR */
+.nav{
+    background:#1877f2;
+    color:white;
+    padding:15px;
+    font-size:28px;
+    font-weight:bold;
+    position:sticky;
+    top:0;
+}
+
+/* POST BOX */
+.post-box{
+    background:white;
+    width:500px;
+    margin:20px auto;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 1px 5px rgba(0,0,0,0.1);
+}
+
+/* TEXTAREA */
+textarea{
+    width:100%;
+    height:100px;
+    border:none;
+    resize:none;
+    outline:none;
+    font-size:18px;
+}
+
+/* POST BUTTON */
+button{
+    background:#1877f2;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:6px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+/* POSTS */
+.post{
+    background:white;
+    width:500px;
+    margin:20px auto;
+    padding:15px;
+    border-radius:10px;
+    box-shadow:0 1px 5px rgba(0,0,0,0.1);
+}
+
+.post h3{
+    margin:0;
+}
+
+.post p{
+    font-size:18px;
+}
+
+.post small{
+    color:gray;
+}
+
+</style>
 </head>
+
 <body>
 
-<h1>Welcome</h1>
+<!-- TOP BAR -->
+<div class="nav">
+    facebook
+</div>
 
-<p>You are logged in successfully.</p>
+<!-- CREATE POST -->
+<div class="post-box">
+
+    <textarea
+        id="postInput"
+        placeholder="What's on your mind?"
+    ></textarea>
+
+    <br><br>
+
+    <button onclick="createPost()">
+        Post
+    </button>
+
+</div>
+
+<!-- POSTS -->
+<div id="posts"></div>
+
+<script type="module" src="feed.js"></script>
 
 </body>
 </html>
