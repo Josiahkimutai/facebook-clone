@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>STONNER PLATFORM</title>
 
   <style>
@@ -14,21 +15,27 @@
     }
 
     body{
-    font-family:Arial, Helvetica, sans-serif;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+      font-family:Arial, Helvetica, sans-serif;
 
-    background-image:url("download (2).jfif");
-    background-size:100% 100%;
-    background-repeat:no-repeat;
-    background-position:center;
-}
+      height:100vh;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      background-image:url("download (2).jfif");
+
+      background-size:100% 100%;
+
+      background-repeat:no-repeat;
+
+      background-position:center;
+    }
 
     .overlay{
       width:100%;
       height:100vh;
+
       background:rgba(0,0,0,0.6);
 
       display:flex;
@@ -38,10 +45,13 @@
 
     .box{
       width:350px;
+
       background:rgba(255,255,255,0.12);
+
       backdrop-filter:blur(10px);
 
       padding:30px;
+
       border-radius:20px;
 
       text-align:center;
@@ -54,6 +64,7 @@
     .logo{
       width:120px;
       height:120px;
+
       object-fit:cover;
 
       border-radius:50%;
@@ -64,25 +75,43 @@
     }
 
     h2{
-      color:white;
-      margin-bottom:20px;
-      font-size:28px;
-      letter-spacing:1px;
+      color:#00ff66;
+
+      font-size:32px;
+
+      font-weight:bold;
+
+      letter-spacing:2px;
+
+      margin-bottom:15px;
+
+      text-transform:uppercase;
+
+      font-family:'Trebuchet MS', sans-serif;
+
+      text-shadow:
+        0 0 10px #e66109,
+        0 0 20px #eb6a15,
+        0 0 40px #f76d11;
     }
 
     p{
       color:#ddd;
+
       margin-bottom:25px;
+
       font-size:14px;
     }
 
     input{
       width:100%;
+
       padding:14px;
 
       margin-bottom:20px;
 
       border:none;
+
       border-radius:12px;
 
       outline:none;
@@ -90,19 +119,33 @@
       font-size:16px;
 
       background:rgba(255,255,255,0.9);
+
+      color:#f3560e;
+
+      font-weight:bold;
+
+      text-align:center;
+    }
+
+    input::placeholder{
+      color:#00cc55;
     }
 
     button{
       width:100%;
+
       padding:14px;
 
       border:none;
+
       border-radius:12px;
 
       background:linear-gradient(45deg,#1877f2,#42a5f5);
 
       color:white;
+
       font-size:17px;
+
       font-weight:bold;
 
       cursor:pointer;
@@ -112,7 +155,38 @@
 
     button:hover{
       transform:scale(1.03);
+
       opacity:0.95;
+    }
+
+    .powered{
+      position:fixed;
+
+      bottom:15px;
+
+      width:100%;
+
+      text-align:center;
+
+      color:white;
+
+      font-size:14px;
+
+      letter-spacing:1px;
+
+      z-index:999;
+    }
+
+    .powered span{
+      color:#eee024;
+
+      font-weight:bold;
+
+      font-size:16px;
+
+      text-shadow:
+        0 0 10px #f1591c,
+        0 0 20px #f1690e;
     }
 
   </style>
@@ -133,12 +207,16 @@
 
     <input type="text"
            id="phone"
-           placeholder="Enter phone number (2547...)">
+           placeholder="📞 Enter phone number (2547...)">
 
     <button onclick="login()">REGISTER</button>
 
   </div>
 
+</div>
+
+<div class="powered">
+  Powered by <span>JOSKEV DEVELOPERS</span>
 </div>
 
 <script>
@@ -150,10 +228,13 @@ async function login() {
   const phone = document.getElementById("phone").value;
 
   const res = await fetch(`${API}/login`, {
+
     method: "POST",
+
     headers: {
       "Content-Type": "application/json"
     },
+
     body: JSON.stringify({ phone })
   });
 
