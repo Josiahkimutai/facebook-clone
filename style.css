@@ -2,6 +2,11 @@ body{
     margin:0;
     background:#f0f2f5;
     font-family:Helvetica, Arial, sans-serif;
+
+    background-image: url("download (2).jfif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 /* MAIN */
@@ -22,11 +27,15 @@ body{
 }
 
 .left p{
-    width:500px;
+    width:450px;
     font-size:28px;
-    color:#1c1e21;
+    color:#1e211c;
 }
-
+h2
+{
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+color: #42b72a;
+}
 /* RIGHT */
 .login-box{
     background:white;
