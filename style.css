@@ -104,4 +104,22 @@ color: #42b72a;
     text-align:center;
     margin-top:20px;
     font-size:14px;
+}#phone{
+  color:#00ff66;
+}
+
+#amount{
+  color:red;
+}.phone-input{
+  color:#00ff66;
+  font-weight:bold;
+}
+
+.phone-input::placeholder{
+  color:#00ff66;
+}
+
+.amount-input{
+  color:red;
+  font-weight:bold;
 }
