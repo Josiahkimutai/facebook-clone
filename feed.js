@@ -1,77 +1,41 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js'
 
-const supabaseUrl = 'https://pzrdyjpvueannxtpstlt.supabase.co'
-const supabaseKey = 'sb_publishable_YpYLHHbRQ6u084gqC32lSg_f1tM3mmJ'
+const supabaseUrl = "YOUR_SUPABASE_URL"
+const supabaseKey = "YOUR_SUPABASE_ANON_KEY"
 
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 /* LOAD POSTS */
 async function loadPosts() {
 
-    const { data, error } = await supabase
-        .from('posts')
-        .select('*')
-        .order('created_at', { ascending: false })
+  const { data } = await supabase
+    .from("posts")
+    .select("*")
+    .order("created_at", { ascending:false })
 
-    const postsDiv = document.getElementById('posts')
+  const div = document.getElementById("posts");
+  div.innerHTML = "";
 
-    postsDiv.innerHTML = ''
-
-    if(error){
-
-        console.log(error)
-        return
-    }
-
-    data.forEach(post => {
-
-        postsDiv.innerHTML += `
-
-        <div class="post">
-
-            <h3>User</h3>
-
-            <p>${post.content}</p>
-
-            <small>${new Date(post.created_at).toLocaleString()}</small>
-
-        </div>
-
-        `
-    })
+  data.forEach(p => {
+    div.innerHTML += `
+      <div class="post">
+        <h4>User</h4>
+        <p>${p.content}</p>
+      </div>
+    `
+  });
 }
 
 /* CREATE POST */
-window.createPost = async function () {
+window.post = async function () {
 
-    const content = document.getElementById('postInput').value
+  const text = document.getElementById("text").value;
 
-    if(content.trim() === '') return
+  await supabase.from("posts").insert([
+    { content: text }
+  ]);
 
-    const {
-        data: { user }
-    } = await supabase.auth.getUser()
-
-    const { error } = await supabase
-        .from('posts')
-        .insert([
-            {
-                user_id: user.id,
-                content: content
-            }
-        ])
-
-    if(error){
-
-        alert(error.message)
-
-    }else{
-
-        document.getElementById('postInput').value = ''
-
-        loadPosts()
-    }
+  loadPosts();
 }
 
-/* LOAD POSTS */
-loadPosts()
+loadPosts();
